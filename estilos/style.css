@@ -104,10 +104,9 @@ body {
   position: relative;
   grid-area: 2 / 1 / 3 / -1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  padding: clamp(40px, 8vw, 100px) clamp(24px, 6vw, 110px);
-  overflow: hidden;
+  padding: clamp(40px, 5vw, 100px) clamp(24px, 6vw, 110px);
   background-color: var(--corfundo);
   background-image: radial-gradient(
     rgba(201, 164, 92, 0.18) 1px,
