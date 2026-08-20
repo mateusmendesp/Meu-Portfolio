@@ -48,7 +48,7 @@ body {
 #header p {
   font-family: var(--fontetitulos);
   font-weight: 600;
-  font-size: clamp(0.95rem, 2.5vw, 1.7rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.7rem);
   color: var(--corfundo);
   max-width: 70%;
 }
@@ -199,7 +199,7 @@ body {
 
 @media (max-width: 768px) {
   #header p {
-    max-width: 70%;
+    max-width: 75%;
   }
 
   .hamburger {
