@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="estilos/style.css" />
     <link
       rel="shortcut icon"
-      href="../Meu Portfolio/imagens/10456439.png"
+      href="/Meu Portfolio/imagens/10456439.png"
       type="image/x-icon"
     />
   </head>
   <body>
     <div class="container">
       <header id="header">
-        <h1>Mateus Mendes Pardo De Oliveira</h1>
-        <nav>
+        <p>Mateus Mendes Pardo De Oliveira</p>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav id="nav-menu">
           <ul>
             <li><a href="#header">Inicio</a></li>
             <li><a href="#projetos">Projetos</a></li>
@@ -25,11 +33,51 @@
           </ul>
         </nav>
       </header>
-      <main id="hero"></main>
+
+      <main id="hero">
+        <div class="conteudo">
+          <p class="inicio">Desenvolvedor Front-End</p>
+
+          <h1 class="titulo">
+            Crio sites modernos para negócios que querem se destacar
+            digitalmente.
+          </h1>
+
+          <p class="texto">
+            Desenvolvo interfaces responsivas, acessíveis e focadas em uma boa
+            experiência para o usuário.
+          </p>
+
+          <div class="botoes">
+            <a href="#projetos" class="botao botao--primeiro"> Ver projetos </a>
+
+            <a href="#contato" class="botao botao--segundo">
+              Entrar em contato
+            </a>
+          </div>
+        </div>
+      </main>
+
       <section id="projetos"></section>
       <section id="sobre"></section>
       <section id="skills"></section>
       <footer id="contato"></footer>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const hamburger = document.querySelector(".hamburger");
+        const header = document.getElementById("header");
+        const navLinks = document.querySelectorAll("#nav-menu a");
+
+        if (!menuToggle || !hamburger || !header) return;
+
+        function closeMenu() {
+          menuToggle.checked = false;
+          hamburger.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
   </body>
 </html>
