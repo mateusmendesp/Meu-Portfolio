@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --corfundo: rgb(16, 16, 65);
+    --cortextos: white;
+    --cordetalhes: rgb(168, 151, 53);
+    --corextra: black;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 1.5fr 1.5fr 1fr 1fr 90px;
+}
+
+#header {
+    grid-area: 1 / 1 / 2 / -1;
+    display: flex;
+    background-color: var(--cordetalhes);
+}
+
+#header nav ul{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    font-size: 1.3em;
+}
