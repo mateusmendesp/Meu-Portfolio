@@ -32,7 +32,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 60px 1.5fr 1.5fr 1fr 1fr 90px;
+  grid-template-rows: 60px 0.7fr 1fr 1fr 1fr 90px;
 }
 
 #header {
@@ -197,6 +197,223 @@ body {
   border-color: var(--cordetalhes);
   color: var(--cordetalhes);
 }
+
+#projetos {
+  grid-area: 3 / 1 / 4 / -1;
+  padding: clamp(50px, 6vw, 100px) clamp(24px, 6vw, 110px);
+  background-color: var(--corfundo);
+}
+
+.projetos-cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.projetos-titulo {
+  font-family: var(--fontetitulos);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--cortextos);
+}
+
+.projetos-subtitulo {
+  font-family: var(--fontetexto);
+  color: rgba(255, 253, 248, 0.73);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+}
+
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--corsecund);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.card__imagem {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--corfundo);
+}
+
+.card__imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card__imagem img {
+  transform: scale(1.06);
+}
+
+.card__conteudo {
+  padding: 20px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card__conteudo h3 {
+  font-family: var(--fontetitulos);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--cordetalhes);
+}
+
+.card__conteudo p {
+  font-family: var(--fontetexto);
+  font-size: 0.9rem;
+  color: rgba(255, 253, 248, 0.75);
+  line-height: 1.5;
+}
+
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card__tags span {
+  font-family: var(--fonteopt);
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: rgba(201, 164, 92, 0.15);
+  color: var(--cordetalhes);
+}
+
+.card__links {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.card__links .botao {
+  padding: 9px 16px;
+  font-size: 0.82rem;
+}
+
+#sobre {
+  grid-area: 4 / 1 / 5 / -1;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(30px, 5vw, 70px);
+  align-items: center;
+  padding: clamp(50px, 6vw, 100px) clamp(24px, 6vw, 110px);
+  background-color: var(--fundo-secundario);
+}
+
+.sobre-imagem {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 195px;
+  overflow: hidden;
+  background-color: var(--corsecund);
+  border: 2px solid var(--cordetalhes);
+}
+
+.sobre-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sobre-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sobre-titulo {
+  font-family: var(--fontetitulos);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--cortextos);
+}
+
+.sobre-texto {
+  font-family: var(--fontetexto);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  color: rgba(255, 253, 248, 0.73);
+  line-height: 1.6;
+}
+
+.sobre-destaques {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 10px 0 12px;
+}
+
+.destaque {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.destaque__numero {
+  font-family: var(--fontetitulos);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--cordetalhes);
+}
+
+.destaque__label {
+  font-family: var(--fontetexto);
+  font-size: 0.8rem;
+  color: rgba(255, 253, 248, 0.6);
+}
+
+.sobre-conteudo .botao {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  #sobre {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .sobre-imagem {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .projetos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .projetos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
 
 @media (max-width: 768px) {
   #header p {
