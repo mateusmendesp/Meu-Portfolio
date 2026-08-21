@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 :root {
     color-scheme: light;
   --corfundo: #0b1f33;
@@ -32,7 +37,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 60px 0.7fr 1fr 1fr 1fr 90px;
+grid-template-rows: 60px repeat(5, auto);
 }
 
 #header {
@@ -123,6 +128,7 @@ body {
   flex-direction: column;
   gap: 18px;
   max-width: 640px;
+  width: 100%;
 }
 
 .inicio {
@@ -201,7 +207,7 @@ body {
 #projetos {
   grid-area: 3 / 1 / 4 / -1;
   padding: clamp(50px, 6vw, 100px) clamp(24px, 6vw, 110px);
-  background-color: var(--corfundo);
+  background-color: var(--fundo-secundario);
 }
 
 .projetos-cabecalho {
@@ -324,7 +330,7 @@ body {
 .sobre-imagem {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 195px;
+  border-radius: 50%;
   overflow: hidden;
   background-color: var(--corsecund);
   border: 2px solid var(--cordetalhes);
@@ -399,6 +405,116 @@ body {
   }
 }
 
+#skills {
+  grid-area: 5 / 1 / 6 / -1;
+  padding: clamp(50px, 6vw, 100px) clamp(24px, 6vw, 110px);
+  background-color: var(--corfundo);
+}
+
+.skills-cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.skills-titulo {
+  font-family: var(--fontetitulos);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--cortextos);
+}
+
+.skills-subtitulo {
+  font-family: var(--fontetexto);
+  color: rgba(255, 253, 248, 0.73);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.5;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: var(--corsecund);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+
+.skill-card__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.skill-card__topo h3 {
+  font-family: var(--fontetitulos);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--cortextos);
+}
+
+.skill-nivel {
+  font-family: var(--fonteopt);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.skill-nivel--solido {
+  background-color: rgba(201, 164, 92, 0.18);
+  color: var(--cordetalhes);
+}
+
+.skill-nivel--iniciante {
+  background-color: rgba(156, 163, 175, 0.18);
+  color: var(--texto-secundario);
+}
+
+.skill-barra {
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background-color: rgba(255, 253, 248, 0.1);
+  overflow: hidden;
+}
+
+.skill-barra__preenchimento {
+  height: 100%;
+  border-radius: 4px;
+  background-color: var(--cordetalhes);
+}
+
+.skill-card p {
+  font-family: var(--fontetexto);
+  font-size: 0.85rem;
+  color: rgba(255, 253, 248, 0.65);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 900px) {
   .projetos-grid {
     grid-template-columns: 1fr 1fr;
@@ -463,11 +579,159 @@ body {
     align-items: center;
     text-align: left;
   }
-  .hero__description {
+  .texto {
     max-width: 100%;
   }
   .botoes {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+#contato {
+  grid-area: 6 / 1 / 7 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: clamp(50px, 6vw, 90px) clamp(24px, 6vw, 110px) 24px;
+  background-color: var(--fundo-secundario);
+}
+
+.contato-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(30px, 5vw, 70px);
+}
+
+.contato-info {
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+  max-width: 600px;
+  gap: 14px;
+}
+
+.contato-titulo {
+  font-family: var(--fontetitulos);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--cortextos);
+  
+}
+
+.contato-texto {
+  font-family: var(--fontetexto);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  color: rgba(255, 253, 248, 0.73);
+  line-height: 1.6;
+
+  max-width: 100%;
+
+}
+
+.contato-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+    width: 100%;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.contato-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 4px;
+  border-bottom: 1px solid rgba(255, 253, 248, 0.1);
+  text-decoration: none;
+  transition: 0.2s ease;
+  flex-wrap: wrap;
+    width: 100%;
+  max-width: 420px;
+}
+
+.contato-link:hover {
+  border-color: var(--cordetalhes);
+  transform: translateX(4px);
+}
+
+.contato-link__label {
+  font-family: var(--fonteopt);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cordetalhes);
+}
+
+.contato-link__valor {
+  font-family: var(--fontetexto);
+  font-size: 0.9rem;
+  color: var(--cortextos);
+  word-break: break-word;
+}
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-family: var(--fonteopt);
+  font-size: 0.8rem;
+  color: rgba(255, 253, 248, 0.7);
+}
+
+.campo input,
+.campo textarea {
+  font-family: var(--fontetexto);
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 253, 248, 0.2);
+  background-color: rgba(255, 253, 248, 0.05);
+  color: var(--cortextos);
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--cordetalhes);
+}
+
+.contato-form .botao {
+  align-self: flex-start;
+  margin-top: 4px;
+  border: none;
+}
+
+.contato-copy {
+  text-align: center;
+  font-family: var(--fontetexto);
+  font-size: 0.78rem;
+  color: rgba(255, 253, 248, 0.4);
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 253, 248, 0.08);
+}
+
+@media (max-width: 768px) {
+  .contato-conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .contato-texto {
+    max-width: 100%;
   }
 }
