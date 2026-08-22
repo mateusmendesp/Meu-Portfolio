@@ -158,7 +158,7 @@ grid-template-rows: 60px repeat(5, auto);
 .titulo {
   font-family: var(--fontetitulos);
   font-weight: 600;
-  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  font-size: clamp(1.9rem, 3.9vw, 3.2rem);
   line-height: 1.15;
   color: var(--cortextos);
 }
