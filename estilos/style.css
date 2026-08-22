@@ -5,6 +5,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+      color-scheme: light;
+
+}
 
 html,
 body {
@@ -33,6 +37,10 @@ body {
 
 body {
   font-family: var(--fonteopt);
+  body {
+    background-color: #fff;
+    color: #222;
+}
 }
 .container {
   display: grid;
